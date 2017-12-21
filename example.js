@@ -14,8 +14,8 @@ const peer = new Peer(link, {})
 peer.init()
 
 const query = {
-  action: 'getHelloWorld',
-  args: [ { name: 'Paolo' } ]
+  action: 'getHostname',
+  args: [ { ip: '8.8.8.8' } ]
 }
 
 peer.request('dns:service', query, { timeout: 10000 }, (err, data) => {

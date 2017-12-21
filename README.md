@@ -28,26 +28,28 @@ node worker.js --env=development --wtype=wrk-dns-service-api --apiPort 1337
 
 ## Grenache API
 
-### action: 'getHelloWorld'
+### action: 'getHostname'
 
   - `args`: &lt;Array&gt;
     - `0`: &lt;Object&gt;
-      - `name`: &lt;String&gt; Name to greet
+      - `ip`: &lt;String&gt; Ip to resolve
 
 **Response:**
 
-  - &lt;String&gt; The Greeting
+  - &lt;Array&gt;
+    - `0`: &lt;String&gt; Ip that was resolved
+    - `1`: &lt;Array&gt; Hostnames
 
 **Example Payload:**
 
 ```js
-args: [ { name: 'Paolo' } ]
+args: [ { ip: '8.8.8.8' } ]
 ```
 
 **Example Response:**
 
 ```js
-'Hello Paolo'
+[ '8.8.8.8', [ 'google-public-dns-a.google.com' ] ]
 ```
 
 Example: [example.js](example.js)
