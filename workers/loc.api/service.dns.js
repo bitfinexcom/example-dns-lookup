@@ -8,12 +8,6 @@ class dnsService extends Api {
     return space
   }
 
-  getHelloWorld (space, args, cb) {
-    const name = args.name
-    const res = 'Hello ' + name
-
-    cb(null, res)
-  }
 }
 
 module.exports = dnsService
